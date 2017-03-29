@@ -2,8 +2,8 @@
 
 Demos of [GoPlay](https://github.com/Jennal/goplay) Framework
 
-- echo service
-- echo-cluster service
+- [echo service](echo)
+- [echo-cluster service](echo-cluster)
 
 # The MIT License
 
