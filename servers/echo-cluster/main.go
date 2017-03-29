@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/jennal/goplay-echo/echo"
+	"github.com/jennal/goplay-demos/servers/echo-cluster/echo"
 	"github.com/jennal/goplay-master/master"
 	"github.com/jennal/goplay/cmd"
 	"github.com/jennal/goplay/service"
