@@ -5,15 +5,15 @@
 //
 // http://opensource.org/licenses/MIT
 //
-// Unless required by applicable law or agreed to in writing, software distributed 
-// under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
-// CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+// Unless required by applicable law or agreed to in writing, software distributed
+// under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+// CONDITIONS OF ANY KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations under the License.
 
 package main
 
 import (
-	"github.com/jennal/goplay-demos/servers/echo/echo"
+	"github.com/jennal/goplay-demos/echo/server/echo"
 	"github.com/jennal/goplay/cmd"
 	"github.com/jennal/goplay/service"
 	"github.com/jennal/goplay/transfer/tcp"
