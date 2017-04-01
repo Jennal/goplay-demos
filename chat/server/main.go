@@ -13,39 +13,19 @@
 package main
 
 import (
-	"fmt"
-
-	"github.com/jennal/goplay/log"
-	"github.com/jennal/goplay/pkg"
+	"github.com/jennal/goplay-demos/chat/server/chat"
+	"github.com/jennal/goplay/cmd"
 	"github.com/jennal/goplay/service"
 	"github.com/jennal/goplay/transfer/tcp"
 )
 
 func main() {
-	cli := tcp.NewClient()
-	client := service.NewServiceClient(cli)
+	/* setup service  */
+	ser := tcp.NewServer("", 2234)
+	serv := service.NewService("chat", ser)
 
-	client.AddListener("echo.push", func(push string) {
-		log.Log("OnPush: ", push)
-	})
+	/* regist handler */
+	serv.RegistHanlder(chat.NewServices())
 
-	err := client.Connect("", 1234)
-	if err != nil {
-		log.Error(err)
-		return
-	}
-
-	for {
-		line := ""
-		fmt.Scanln(&line)
-		log.Log("Send: ", line)
-
-		client.Notify("echo.services.notify", line)
-
-		client.Request("echo.services.echo", line, func(back string) {
-			log.Log("Recv: ", back)
-		}, func(err *pkg.ErrorMessage) {
-			log.Error(err)
-		})
-	}
+	cmd.Start(serv)
 }

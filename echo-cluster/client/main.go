@@ -25,15 +25,16 @@ import (
 func main() {
 	cli := tcp.NewClient()
 	client := service.NewServiceClient(cli)
+
+	client.AddListener("echo.push", func(push string) {
+		log.Log("OnPush: ", push)
+	})
+
 	err := client.Connect("", connector.PORT)
 	if err != nil {
 		log.Error(err)
 		return
 	}
-
-	client.AddListener("echo.push", func(push string) {
-		log.Log("OnPush: ", push)
-	})
 
 	for {
 		line := ""
