@@ -105,14 +105,10 @@ func main() {
 
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
-		client.Request("chat.services.say", chat.ChatData{
+		client.Notify("chat.services.say", chat.ChatData{
 			UserName: name,
 			RoomName: RoomName,
 			Message:  scanner.Text(),
-		}, func(back string) {
-			log.Log(back)
-		}, func(err *pkg.ErrorMessage) {
-			log.Error(err)
 		})
 	}
 }
