@@ -5,6 +5,7 @@ Demos of [GoPlay](https://github.com/Jennal/goplay) Framework
 - [echo service](echo)
 - [echo-cluster service](echo-cluster)
 - [chat service](chat)
+- [chat-cluster service](chat-cluster)
 
 # The MIT License
 
