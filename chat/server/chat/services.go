@@ -30,7 +30,7 @@ type Services struct {
 
 func NewServices() *Services {
 	return &Services{
-		cm: channel.NewChannelManager(),
+		cm: channel.GetChannelManager(),
 	}
 }
 
