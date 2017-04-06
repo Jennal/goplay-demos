@@ -13,15 +13,27 @@
 package main
 
 import (
+	"flag"
+
 	"github.com/jennal/goplay-demos/chat/server/chat"
 	"github.com/jennal/goplay-master/master"
 	"github.com/jennal/goplay/cmd"
 	"github.com/jennal/goplay/transfer/tcp"
 )
 
+var (
+	port *int
+)
+
+func init() {
+	port = flag.Int("p", 2234, "port of the server")
+}
+
 func main() {
+	flag.Parse()
+
 	/* setup service  */
-	ser := tcp.NewServer("", 2234)
+	ser := tcp.NewServer("", *port)
 	serv := master.NewBackendService("chat", ser)
 
 	/* regist handler */

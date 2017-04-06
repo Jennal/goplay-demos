@@ -14,6 +14,7 @@ package main
 
 import (
 	"bufio"
+	"flag"
 	"fmt"
 	"os"
 
@@ -34,7 +35,17 @@ const (
 	RoomName = "Room-1"
 )
 
+var (
+	port *int
+)
+
+func init() {
+	port = flag.Int("p", connector.PORT, "port of the server")
+}
+
 func main() {
+	flag.Parse()
+
 	cli := tcp.NewClient()
 	client := service.NewServiceClient(cli)
 
@@ -46,7 +57,7 @@ func main() {
 		log.Log("OnChannel: ", push)
 	})
 
-	err := client.Connect("", connector.PORT)
+	err := client.Connect("", *port)
 	if err != nil {
 		log.Error(err)
 		return
