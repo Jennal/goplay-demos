@@ -22,4 +22,4 @@ Now every line you input to terminal will notify & request to server, and server
 
 ## Javascript-Client
 
-See [goplay-client-javascript](https://github.com/jennal/goplay-client-javascript)
+See [goplay-client-javascript](https://github.com/Jennal/goplay-client-javascript/blob/master/demo/echo-websocket/index.html)

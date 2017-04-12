@@ -2,10 +2,11 @@
 
 Demos of [GoPlay](https://github.com/Jennal/goplay) Framework
 
-- [echo service](echo)
-- [echo-cluster service](echo-cluster)
-- [chat service](chat)
-- [chat-cluster service](chat-cluster)
+- [echo tcp service](echo)
+- [echo websocket service](echo-websocket)
+- [echo-cluster tcp service](echo-cluster)
+- [chat tcp service](chat)
+- [chat-cluster tcp service](chat-cluster)
 
 # The MIT License
 
