@@ -47,3 +47,7 @@ func (self *Services) Notify(sess *session.Session, data string) *pkg.ErrorMessa
 	sess.Push("echo.push", data)
 	return nil
 }
+
+func (self *Services) Error(sess *session.Session, data string) (string, *pkg.ErrorMessage) {
+	return "", pkg.NewErrorMessage(pkg.STAT_ERR_WRONG_PARAMS, "STAT_ERR_WRONG_PARAMS")
+}
