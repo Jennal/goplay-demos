@@ -45,9 +45,13 @@ func (self *Services) OnNewClient(sess *session.Session) {
 		log.Logf("Client disconnected: %v\n", client.RemoteAddr())
 	})
 	sess.Push("chat.push", "Hello from Chat Server")
+	sess.Set("TEST", "OK")
+	log.Logf("====> OnNewClient: %p", sess)
 }
 
 func (self *Services) Rooms(sess *session.Session, ignore int) ([]string, *pkg.ErrorMessage) {
+	log.Logf("====> Rooms: %p", sess)
+	log.Log(sess.String("TEST"))
 	return self.cm.ChannelNames(), nil
 }
 
