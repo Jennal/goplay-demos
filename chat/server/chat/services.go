@@ -59,6 +59,7 @@ func (self *Services) Create(sess *session.Session, roomName string) (pkg.Status
 
 	ch := self.cm.Create(roomName)
 	ch.Add(sess)
+	log.Log("===> ", ch.Count(), "\t", sess)
 
 	return pkg.STAT_OK, nil
 }
@@ -75,6 +76,7 @@ func (self *Services) Join(sess *session.Session, roomName string) (pkg.Status, 
 	}
 
 	ch.Add(sess)
+	log.Log("===> ", ch.Count(), "\t", sess)
 	return pkg.STAT_OK, nil
 }
 
