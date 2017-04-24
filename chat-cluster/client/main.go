@@ -87,7 +87,7 @@ func main() {
 
 	isCreateRoom := true
 	for _, r := range rooms {
-		if r == RoomName {
+		if r == strings.ToLower(RoomName) {
 			isCreateRoom = false
 			break
 		}
