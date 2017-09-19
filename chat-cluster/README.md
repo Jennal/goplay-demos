@@ -3,7 +3,7 @@
 ## Init GoPlay Framework
 
 ```bash
-go get github.com/jennal/goplay
+go get -u github.com/jennal/goplay
 ```
 
 ## Server
