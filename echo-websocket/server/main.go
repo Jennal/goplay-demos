@@ -13,7 +13,7 @@
 package main
 
 import (
-	"github.com/jennal/goplay-demos/echo/server/echo"
+	"github.com/jennal/goplay-demos/echo-websocket/server/echo"
 	"github.com/jennal/goplay/cmd"
 	"github.com/jennal/goplay/service"
 	"github.com/jennal/goplay/transfer/websocket"
