@@ -40,10 +40,12 @@ func (self *Services) OnNewClient(sess *session.Session) {
 }
 
 func (self *Services) Echo(sess *session.Session, data string) (string, *pkg.ErrorMessage) {
+	log.Logf("Recv Echo: %v\n", data)
 	return data, nil
 }
 
 func (self *Services) Notify(sess *session.Session, data string) *pkg.ErrorMessage {
+	log.Logf("Recv Notify: %v\n", data)
 	sess.Push("echo.push", data)
 	return nil
 }

@@ -52,6 +52,6 @@ func (self *Services) Notify(sess *session.Session, data *proto.String) *pkg.Err
 	return nil
 }
 
-func (self *Services) Error(sess *session.Session, data *proto.String) (*proto.String, *pkg.ErrorMessage) {
+func (self *Services) Error(sess *session.Session) (*proto.String, *pkg.ErrorMessage) {
 	return nil, pkg.NewErrorMessage(pkg.Status_ERR_WRONG_PARAMS, "STAT_ERR_WRONG_PARAMS")
 }
